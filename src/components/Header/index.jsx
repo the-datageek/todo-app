@@ -1,5 +1,23 @@
 import styles from './header.module.css'
-export function Header(){
+import {AiOutlinePlusCircle} from 'react-icons/ai'
+import { useState } from 'react';
+import {TiTick} from 'react-icons/ti'
+
+export function Header({onAddTask}){
+    const [title, setTitle] = useState('');
+    
+    // function to add task
+    function handleSubmit(event){
+        event.preventDefault();
+
+        onAddTask(title)
+        setTitle('');
+    }
+
+    function onChangeTitle(event){
+        setTitle(event.target.value);
+    }
+
 
     return(
         <header className={styles.header}>
@@ -19,6 +37,5 @@ export function Header(){
                 </button>
             </form>
         </header>
-        
     )
 }
