@@ -7,14 +7,16 @@ export function Login() {
   const handleLoginClick = () => {
     setIsChecked(!isChecked);
   };
-
+  const handleSignUpClick = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <div className={styles.main}>
       <input type="checkbox" className={styles.checkbox} aria-hidden="true" checked={isChecked} />
 
       <div className={styles.signup}>
         <form action="">
-          <label htmlFor="checkbox" aria-hidden="true">
+          <label htmlFor="checkbox" aria-hidden="true" onClick={handleSignUpClick}>
             Sign Up
           </label>
           <input type="text" name="text" placeholder="Username" />
